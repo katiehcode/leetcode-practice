@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getConcatenation = function(nums) {
+    // return nums.concat(nums);
+
+    const length = nums.length;
+    const ans = new Array(length * 2);
+
+    for (let i = 0; i < length; i++) {
+        ans[i] = nums[i];
+        ans[i + length] = nums[i];
+    }
+    return ans;
+};
+
+console.log(getConcatenation([1,2,1]));   // [1,2,1,1,2,1]
+console.log(getConcatenation([1,3,2,1])); // [1,3,2,1,1,3,2,1]
