@@ -1,0 +1,18 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+    let xor = 0;
+    const length = nums.length;
+
+    for (let i = 0; i <= length; i++) {
+        xor ^= i;
+    }
+
+    for (let i = 0; i < length; i++) {
+        xor ^= nums[i];
+    }
+
+    return xor;
+};
